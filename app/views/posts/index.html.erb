@@ -1,0 +1,8 @@
+<h1>This is a list of all posts</h1>
+
+<% @posts.each do |post| %>
+	Post: <%= post.secret_text %> <br>
+	<% if logged_in? %>
+		Author: <%= post.user.name %> <br>
+	<% end %>
+<% end %>

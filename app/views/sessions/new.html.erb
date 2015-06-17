@@ -1,0 +1,18 @@
+<% if logged_in? %>
+	<h1>You are already logged in!</h1>
+<% else %>
+<h1>New User Session</h1>
+
+<%= form_for :session, url: login_path do |f| %>
+	<%= f.label :email %> <br>
+	<%= f.email_field :email %> <br>
+
+	<%= f.label :password %> <br>
+	<%= f.password_field :password %> <br> 
+
+	<%= f.label :remember_me %> <br>
+	<%= f.check_box :remember_me %> <br>
+
+	<%= f.submit 'Login' %>
+<% end %>
+<% end %>
